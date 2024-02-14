@@ -22,7 +22,7 @@ export default async function UserPage({
   const currentEndRow = per_page * (page - 1) + users.length;
 
   return (
-    <main className="p-4 w-full flex flex-col gap-4 lg:gap-14">
+    <main className=" mx-auto p-4 w-full max-w-7xl flex flex-col gap-4 lg:gap-14">
       <Header title="Users" />
 
       <section

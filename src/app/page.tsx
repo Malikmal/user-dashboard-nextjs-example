@@ -3,7 +3,7 @@ import Header from "./_components/Header";
 
 export default async function Home() {
   return (
-    <main className="p-4 w-full flex flex-col gap-4 lg:gap-14">
+    <main className=" mx-auto p-4 w-full max-w-7xl flex flex-col gap-4 lg:gap-14">
       <Header title="About" />
 
       <section
