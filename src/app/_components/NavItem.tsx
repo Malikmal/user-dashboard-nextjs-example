@@ -18,11 +18,11 @@ export default function NavItem({
     <Link
       href={href}
       className={`p-4 inline-flex items-center gap-4 cursor-pointer hover:bg-opacity-50 ${
-        pathname == href ? "bg-sidebar-active" : ""
+        pathname == href ? "bg-[#505050]" : ""
       }`}
     >
       {iconSvg}
-      <span className="text-sidebar-text text-base">{title}</span>
+      <span className="text-[#A4A6B3] text-base">{title}</span>
     </Link>
   );
 }
