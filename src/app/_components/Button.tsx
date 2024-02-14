@@ -9,7 +9,7 @@ export default function Button({
 }) {
   return (
     <button
-      className="uppercase px-4 py-3 min-w-[100px] bg-[#65A7DB] text-[#FFFFFF] rounded-full hover:opacity-50"
+      className="uppercase px-4 py-3 min-w-[100px] bg-[#65A7DB] text-[#FFFFFF] rounded-full hover:opacity-50 whitespace-nowrap"
       {...props}
     >
       {children}
