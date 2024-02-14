@@ -1,26 +1,10 @@
 import Image from "next/image";
+import Header from "./_components/Header";
 
 export default async function Home() {
   return (
     <main className="p-4 w-full flex flex-col gap-14">
-      <section
-        id="header"
-        className="w-full inline-flex justify-between items-center"
-      >
-        <h1 className="m-0 text-[#252733] text-2xl font-bold">About</h1>
-        <div className="inline-flex items-center gap-3">
-          <span className="text-[#252733] text-sm font-semibold">
-            Jones Ferdinand
-          </span>
-          <Image
-            src="/photo.png"
-            alt="user profile"
-            width={44}
-            height={44}
-            priority
-          />
-        </div>
-      </section>
+      <Header title="About" />
 
       <section id="about" className="p-4 w-full flex flex-row gap-4">
         <div className="flex flex-col gap-2">
