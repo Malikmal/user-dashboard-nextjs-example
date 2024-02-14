@@ -22,7 +22,7 @@ export default async function UserPage({
   const currentEndRow = per_page * (page - 1) + users.length;
 
   return (
-    <main className="p-4 w-full flex flex-col gap-14">
+    <main className="p-4 w-full flex flex-col gap-4 lg:gap-14">
       <Header title="Users" />
 
       <section
@@ -30,42 +30,51 @@ export default async function UserPage({
         className="p-4 w-full flex flex-col gap-4 bg-white rounded-lg border border-[#DFE0EB]"
       >
         <h2 className="m-0 text-lg font-bold">All users</h2>
-        <table className="w-full table-fixed">
-          <thead className="text-[#9FA2B4] text-sm font-bold">
-            <tr>
-              <th className="p-4 border-b border-b-[#DFE0EB]">Full name</th>
-              <th className="p-4 border-b border-b-[#DFE0EB]">Email</th>
-              <th className="p-4 border-b border-b-[#DFE0EB]"></th>
-            </tr>
-          </thead>
-          <tbody className="text-[#252733] font-semibold text-sm">
-            {users.map((user: any) => (
-              <tr key={user.id}>
-                <td className="p-4 border-b border-b-[#DFE0EB] w-full inline-flex items-center gap-2">
-                  <Image
-                    src={user.avatar}
-                    alt={`${user.first_name} ${user.last_name}`}
-                    width={44}
-                    height={44}
-                    loading="lazy"
-                    className="rounded-full"
-                  />
-                  <span className="">
-                    {user.first_name} {user.last_name}
-                  </span>
-                </td>
-                <td className="p-4 border-b border-b-[#DFE0EB]">
-                  {user.email}
-                </td>
-                <td className="w-full inline-flex justify-end p-4 border-b border-b-[#DFE0EB]">
-                  <Link href={`/user/${user.id}`}>
-                    <Button>View Detail</Button>
-                  </Link>
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full table-auto ">
+            <thead className="text-[#9FA2B4] text-sm font-bold">
+              <tr>
+                <th className="p-4 border-b border-b-[#DFE0EB]">Full name</th>
+                <th className="p-4 border-b border-b-[#DFE0EB]">Email</th>
+                <th className="p-4 border-b border-b-[#DFE0EB]"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="text-[#252733] font-semibold text-sm items-stretch">
+              {users.map((user: any) => (
+                <tr key={user.id}>
+                  <td className="p-4 border-b border-b-[#DFE0EB]">
+                    <div className="w-full flex flex-col lg:flex-row items-center gap-2">
+                      <Image
+                        src={user.avatar}
+                        alt={`${user.first_name} ${user.last_name}`}
+                        width={44}
+                        height={44}
+                        loading="lazy"
+                        className="rounded-full"
+                      />
+                      <span className="whitespace-nowrap">
+                        {user.first_name} {user.last_name}
+                      </span>
+                    </div>
+                  </td>
+                  <td className="p-4 border-b border-b-[#DFE0EB]">
+                    {user.email}
+                  </td>
+                  <td className="p-4 border-b border-b-[#DFE0EB]">
+                    {/* <div className="w-full inline-flex justify-end"> */}
+                    <Link
+                      href={`/user/${user.id}`}
+                      className="w-full inline-flex justify-end"
+                    >
+                      <Button>View Detail</Button>
+                    </Link>
+                    {/*  </div> */}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
         <div className="p-4 w-full inline-flex justify-end gap-2 text-sm text-[#9FA2B4]">
           <span>
             {currentStartRow} - {currentEndRow} of {total}
