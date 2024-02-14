@@ -3,10 +3,13 @@ import Header from "./_components/Header";
 
 export default async function Home() {
   return (
-    <main className="p-4 w-full flex flex-col gap-14">
+    <main className="p-4 w-full flex flex-col gap-4 lg:gap-14">
       <Header title="About" />
 
-      <section id="about" className="p-4 w-full flex flex-row gap-4">
+      <section
+        id="about"
+        className="w-full flex flex-col-reverse lg:flex-row gap-4"
+      >
         <div className="flex flex-col gap-2">
           <h2 className="m-0 text-2xl font-semibold">
             Lorem ipsum dolor sit amet
@@ -35,7 +38,7 @@ export default async function Home() {
           width={487}
           height={344}
           loading="lazy"
-          className="rounded-lg"
+          className="rounded-lg object-cover"
         />
       </section>
     </main>
